@@ -77,8 +77,8 @@ public class Calculator {
         int hBtn = 70;
         int marginX = 20;
         int marginY = 60;
-        int j = -1;
-        int k = -1;
+        // int j = -1;
+        // int k = -1;
         int[] x = {marginX, marginX + 90, 200, 290};
         int[] y = {marginY, marginY + 100, marginY + 180, marginY + 260, marginY + 340, marginY + 420};
 
@@ -475,23 +475,6 @@ public class Calculator {
         window.setVisible(true);
     }
 
-    /*private double calc(double x, String input, char opt) {
-        inText.setFont(inText.getFont().deriveFont(Font.BOLD));
-        double y = Double.parseDouble(input);
-        if (opt == '+') {
-            return x + y;
-        } else if (opt == '-') {
-            return x - y;
-        } else if (opt == '*') {
-            return x * y;
-        } else if (opt == '/') {
-            return x / y;
-        } else if (opt == '%') {
-            return x % y;
-        }
-        inText.setFont(inText.getFont().deriveFont(Font.PLAIN));
-        return y;
-    }*/
 
     private void repaintFont() {
         inText.setFont(inText.getFont().deriveFont(Font.PLAIN));
