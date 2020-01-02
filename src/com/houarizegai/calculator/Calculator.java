@@ -18,7 +18,7 @@ public class Calculator {
     private char opt = ' ';             // Storage Oparator
     private boolean go = true,          // Faire Calcule Avec Opt != (=)
             addWrite = true;    // Racordé des Nombres dans l'Affichage
-    private double val = 0; // Storage Values For Calcule
+    private double val = 0; // Storage Values For Calculate
     private boolean bool = false;
     /*
         Mx Calculator: 
@@ -89,6 +89,8 @@ public class Calculator {
         inText.setFont(new Font("Comic Sans MS", Font.PLAIN, 33));
         window.add(inText);
         
+        Calc calc = new Calc();  // THIS WORK TO CALCULATE BEING A CLASS
+        
         btnC = new JButton("C");
         btnC.setBounds(x[0],y[1],wBtn,hBtn);
         btnC.setFont(btnFont);
@@ -128,7 +130,7 @@ public class Calculator {
             repaintFont();
             if (Pattern.matches("([-]?\\d+[.]\\d*)|(\\d+)", inText.getText()))
                 if (go) {
-                    val = calc(val, inText.getText(), opt);
+                    val = calc.compute(val, inText.getText(), opt);
                     if (Pattern.matches("[-]?[\\d]+[.][0]*", String.valueOf(val))) {
                         inText.setText(String.valueOf((int) val));
                     } else {
@@ -149,7 +151,7 @@ public class Calculator {
             repaintFont();
             if (Pattern.matches("([-]?\\d+[.]\\d*)|(\\d+)", inText.getText()))
                 if (go) {
-                    val = calc(val, inText.getText(), opt);
+                    val = calc.compute(val, inText.getText(), opt);
                     if (Pattern.matches("[-]?[\\d]+[.][0]*", String.valueOf(val))) {
                         inText.setText(String.valueOf((int) val));
                     } else {
@@ -232,7 +234,7 @@ public class Calculator {
             repaintFont();
             if (Pattern.matches("([-]?\\d+[.]\\d*)|(\\d+)", inText.getText()))
                 if (go) {
-                    val = calc(val, inText.getText(), opt);
+                    val = calc.compute(val, inText.getText(), opt);
                     if (Pattern.matches("[-]?[\\d]+[.][0]*", String.valueOf(val))) {
                         inText.setText(String.valueOf((int) val));
                     } else {
@@ -315,7 +317,7 @@ public class Calculator {
             repaintFont();
             if (Pattern.matches("([-]?\\d+[.]\\d*)|(\\d+)", inText.getText()))
                 if (go) {
-                    val = calc(val, inText.getText(), opt);
+                    val = calc.compute(val, inText.getText(), opt);
                     if (Pattern.matches("[-]?[\\d]+[.][0]*", String.valueOf(val))) {
                         inText.setText(String.valueOf((int) val));
                     } else {
@@ -330,7 +332,6 @@ public class Calculator {
                 }
         });
         window.add(btnSub);
-        
         btn1 = new JButton("1");
         btn1.setBounds(x[0],y[4],wBtn,hBtn);
         btn1.setFont(btnFont);
@@ -399,7 +400,7 @@ public class Calculator {
             repaintFont();
             if (Pattern.matches("([-]?\\d+[.]\\d*)|(\\d+)", inText.getText()))
                 if (go) {
-                    val = calc(val, inText.getText(), opt);
+                    val = calc.compute(val, inText.getText(), opt);
                     if (Pattern.matches("[-]?[\\d]+[.][0]*", String.valueOf(val))) {
                         inText.setText(String.valueOf((int) val));
                     } else {
@@ -457,7 +458,7 @@ public class Calculator {
         btnEqual.addActionListener(event -> {
             if (Pattern.matches("([-]?\\d+[.]\\d*)|(\\d+)", inText.getText()))
                 if (go) {
-                    val = calc(val, inText.getText(), opt);
+                    val = calc.compute(val, inText.getText(), opt);  //               1
                     if (Pattern.matches("[-]?[\\d]+[.][0]*", String.valueOf(val))) {
                         inText.setText(String.valueOf((int) val));
                     } else {
@@ -474,7 +475,7 @@ public class Calculator {
         window.setVisible(true);
     }
 
-    private double calc(double x, String input, char opt) {
+    /*private double calc(double x, String input, char opt) {
         inText.setFont(inText.getFont().deriveFont(Font.BOLD));
         double y = Double.parseDouble(input);
         if (opt == '+') {
@@ -490,7 +491,7 @@ public class Calculator {
         }
         inText.setFont(inText.getFont().deriveFont(Font.PLAIN));
         return y;
-    }
+    }*/
 
     private void repaintFont() {
         inText.setFont(inText.getFont().deriveFont(Font.PLAIN));
