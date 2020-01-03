@@ -54,7 +54,7 @@ public class Calculator {
     
     */
 
-    private Calculator() {
+    Calculator() {
         window = new JFrame("Calculator");
         window.setSize(410,600); // Height And Width Of Window
         window.setLocationRelativeTo(null); // Move Window To Center
@@ -513,7 +513,8 @@ public class Calculator {
             btnEqual.setForeground(Color.BLACK);
 
             bool = false;
-        } else {
+        } 
+        else {
             choixColor.setText("Untoggle colors");
             choixColor.setBackground(null);
             choixColor.setForeground(Color.BLACK);
@@ -548,9 +549,7 @@ public class Calculator {
             btnEqual.setForeground(Color.WHITE);
             bool = true;
         }
-}
-    
-    public static void main(String[] args) {
-        new Calculator();
     }
+    
+    
 }
