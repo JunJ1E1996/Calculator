@@ -11,7 +11,7 @@ public class Calculator {
 
     private JFrame window; // This is Main Window
     private JTextField inText;  // Input Text
-    private JButton btnC, btnBack, btnMod, btnDiv, btn7, btn8, btn9,
+    private JButton btnBack, btnMod, btnDiv, btn7, btn8, btn9,
             btnMul, btn4, btn5, btn6, btnSub, btn1, btn2, btn3, btnAdd, btnPoint, btn0, btnEqual, choixColor;
     private char opt = ' ';             // Storage Oparator
     private boolean go = true,          //  Opt != (=)
@@ -67,7 +67,7 @@ public class Calculator {
         choixColor.setBackground(Color.GREEN.darker());
         choixColor.setForeground(Color.WHITE);
         choixColor.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        choixColor.addActionListener(event -> themeColor());
+        //choixColor.addActionListener(event -> themeColor());
         window.add(choixColor);
 
         int wBtn = 80;// Width Button
@@ -88,17 +88,14 @@ public class Calculator {
         
         Calc calc = new Calc();  // THIS WORK TO CALCULATE BEING A CLASS
         
-        btnC = new JButton("C");
-        btnC.setBounds(x[0],y[1],wBtn,hBtn);
-        btnC.setFont(btnFont);
-        btnC.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        btnC.addActionListener(event -> {
+        BtnC btnC = new BtnC();    // create button C
+        btnC.btn.addActionListener(event -> {
             repaintFont();
             inText.setText("0");
             opt = ' ';
             val = 0;
         });
-        window.add(btnC);
+        window.add(btnC.btn);
                 
         btnBack = new JButton("<-");
         btnBack.setBounds(x[1],y[1],wBtn,hBtn);
@@ -477,7 +474,7 @@ public class Calculator {
         inText.setFont(inText.getFont().deriveFont(Font.PLAIN));
     }
 
-    private void themeColor() {
+    /*private void themeColor() {
 
         if (bool) {
             choixColor.setText("Toggle colors");
@@ -549,7 +546,7 @@ public class Calculator {
             btnEqual.setForeground(Color.WHITE);
             bool = true;
         }
-    }
+    }*/
     
     
 }
