@@ -3,8 +3,6 @@ package com.houarizegai.calculator;
 
 import java.awt.Cursor;
 import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.regex.Pattern;
 import java.awt.Color;
 import javax.swing.*;
@@ -12,12 +10,12 @@ import javax.swing.*;
 public class Calculator {
 
     private JFrame window; // This is Main Window
-    private JTextField inText, affichageCalc; // Input Text
+    private JTextField inText;  // Input Text
     private JButton btnC, btnBack, btnMod, btnDiv, btn7, btn8, btn9,
             btnMul, btn4, btn5, btn6, btnSub, btn1, btn2, btn3, btnAdd, btnPoint, btn0, btnEqual, choixColor;
     private char opt = ' ';             // Storage Oparator
-    private boolean go = true,          // Faire Calcule Avec Opt != (=)
-            addWrite = true;    // Racordé des Nombres dans l'Affichage
+    private boolean go = true,          //  Opt != (=)
+            addWrite = true;    
     private double val = 0; // Storage Values For Calculate
     private boolean bool = false;
     /*
@@ -77,8 +75,7 @@ public class Calculator {
         int hBtn = 70;
         int marginX = 20;
         int marginY = 60;
-        // int j = -1;
-        // int k = -1;
+        
         int[] x = {marginX, marginX + 90, 200, 290};
         int[] y = {marginY, marginY + 100, marginY + 180, marginY + 260, marginY + 340, marginY + 420};
 

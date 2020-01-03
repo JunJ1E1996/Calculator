@@ -1,13 +1,5 @@
 package com.houarizegai.calculator; // THIS CLASS JUST USE TO CALCULATE 
 
-import java.awt.Cursor;
-import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.regex.Pattern;
-import java.awt.Color;
-import javax.swing.*;
-
 public class Calc {
 	
 	// inText = new JTextField();
