@@ -11,15 +11,15 @@ public class Calculator {
 
     private JFrame window; // This is Main Window
     private JTextField inText;  // Input Text
-    private JButton btnMul, btn4, btn5, btn6, btnSub, btn1, btn2, btn3, btnAdd, btnPoint, btn0, btnEqual, choixColor;
-    private char opt = ' ';             // Storage Oparator
+    private JButton btn4, btn5, btn6, btnSub, btn1, btn2, btn3, btnAdd, btnPoint, btn0, btnEqual, choixColor;
+    private char opt = ' ';             // Storage Operator
     private boolean go = true,          //  Opt != (=)
             addWrite = true;    
     private double val = 0; // Storage Values For Calculate
     private boolean bool = false;
     /*
         Mx Calculator: 
-        X = Ligne
+        X = Row
         Y = Column
     
         +-------------------+
@@ -206,11 +206,9 @@ public class Calculator {
         });
         window.add(btn9.btn);
         
-        btnMul = new JButton("*");
-        btnMul.setBounds(x[3],y[2],wBtn,hBtn);
-        btnMul.setFont(btnFont);
-        btnMul.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        btnMul.addActionListener(event -> {
+        BtnMul btnMul = new BtnMul();
+        
+        btnMul.btn.addActionListener(event -> {
             repaintFont();
             if (Pattern.matches("([-]?\\d+[.]\\d*)|(\\d+)", inText.getText()))
                 if (go) {
@@ -227,7 +225,7 @@ public class Calculator {
                     opt = '*';
                 }
         });
-        window.add(btnMul);
+        window.add(btnMul.btn);
         
         btn4 = new JButton("4");
         btn4.setBounds(x[0],y[3],wBtn,hBtn);
