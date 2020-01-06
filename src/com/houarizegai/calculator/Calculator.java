@@ -11,7 +11,7 @@ public class Calculator {
 
     private JFrame window; // This is Main Window
     //private JTextField inText;  // Input Text
-    private JButton btn3, btnAdd, btnPoint, btn0, btnEqual, choixColor;
+    private JButton btnAdd, btnPoint, btn0, btnEqual, choixColor;
     private char opt = ' ';             // Storage Operator
     private boolean go = true,          //  Opt != (=)
             addWrite = true;    
@@ -340,11 +340,9 @@ public class Calculator {
         });
         window.add(btn2.btn);
         
-        btn3 = new JButton("3");
-        btn3.setBounds(x[2], y[4], wBtn, hBtn);
-        btn3.setFont(btnFont);
-        btn3.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        btn3.addActionListener(event -> {
+        Btn3 btn3 = new Btn3(); // create button Btn3
+       
+        btn3.btn.addActionListener(event -> {
             repaintFont();
             if (addWrite) {
                 if (Pattern.matches("[0]*", inText.Field.getText())) {
@@ -358,7 +356,7 @@ public class Calculator {
             }
             go = true;
         });
-        window.add(btn3);
+        window.add(btn3.btn);
         
         btnAdd = new JButton("+");
         btnAdd.setBounds(x[3], y[4], wBtn, hBtn);
