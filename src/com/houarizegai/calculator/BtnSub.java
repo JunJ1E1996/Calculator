@@ -4,7 +4,7 @@ import java.awt.Cursor;
 
 import javax.swing.JButton;
 
-public class BtnSub  implements Create_Button{
+public class BtnSub implements Create_Button{
 	
 	JButton btn = new JButton("-");
 	
