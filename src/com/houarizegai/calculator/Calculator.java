@@ -11,7 +11,7 @@ public class Calculator {
 
     private JFrame window; // This is Main Window
     //private JTextField inText;  // Input Text
-    private JButton btnEqual, choixColor;
+    private JButton choixColor;
     private char opt = ' ';             // Storage Operator
     private boolean go = true,          //  Opt != (=)
             addWrite = true;    
@@ -409,12 +409,10 @@ public class Calculator {
             go = true;
         });
         window.add(btn0.btn);
-        
-        btnEqual = new JButton("=");
-        btnEqual.setBounds(x[2],y[5],2*wBtn+10,hBtn);
-        btnEqual.setFont(btnFont);
-        btnEqual.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        btnEqual.addActionListener(event -> {
+         
+        BtnEqual btnEqual = new BtnEqual();  // create button BtnEqual
+       
+        btnEqual.btn.addActionListener(event -> { 
             if (Pattern.matches("([-]?\\d+[.]\\d*)|(\\d+)", inText.Field.getText()))
                 if (go) {
                     val = calc.compute(val, inText.Field.getText(), opt);  //               1
@@ -427,7 +425,8 @@ public class Calculator {
                     addWrite = false;
                 }
         });
-        window.add(btnEqual);
+        window.add(btnEqual.btn);
+        
         window.setLayout(null);
         window.setResizable(false);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // If Click into The Red Button => End The Processus
