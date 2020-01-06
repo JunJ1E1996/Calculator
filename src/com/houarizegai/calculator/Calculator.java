@@ -358,11 +358,9 @@ public class Calculator {
         });
         window.add(btn3.btn);
         
-        btnAdd = new JButton("+");
-        btnAdd.setBounds(x[3], y[4], wBtn, hBtn);
-        btnAdd.setFont(btnFont);
-        btnAdd.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        btnAdd.addActionListener(event -> {
+        BtnAdd btnAdd = new BtnAdd(); // create button BtnAdd
+        
+        btnAdd.btn.addActionListener(event -> { 
             repaintFont();
             if (Pattern.matches("([-]?\\d+[.]\\d*)|(\\d+)", inText.Field.getText()))
                 if (go) {
@@ -379,7 +377,7 @@ public class Calculator {
                     opt = '+';
                 }
         });
-        window.add(btnAdd);
+        window.add(btnAdd.btn);
         
         btnPoint = new JButton(".");
         btnPoint.setBounds(x[0],y[5],wBtn,hBtn);
