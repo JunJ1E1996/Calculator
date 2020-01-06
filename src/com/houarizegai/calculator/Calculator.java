@@ -20,6 +20,7 @@ public class Calculator {
     
     
     InText inText = new InText(); // ADD A JTextField
+    RepaintFont repaintFont = new RepaintFont();
     /*
         Mx Calculator: 
         X = Row
@@ -61,8 +62,6 @@ public class Calculator {
         window.setSize(410,600); // Height And Width Of Window
         window.setLocationRelativeTo(null); // Move Window To Center
         
-        Font btnFont = new Font("Comic Sans MS", Font.PLAIN, 28);
-        
         choixColor = new JButton();
         choixColor.setBounds(200, 30, 140, 18);
         choixColor.setText("Toggle colors");
@@ -72,15 +71,6 @@ public class Calculator {
         //choixColor.addActionListener(event -> themeColor());
         window.add(choixColor);
 
-        int wBtn = 80;// Width Button
-        // Height Button
-        int hBtn = 70;
-        int marginX = 20;
-        int marginY = 60;
-        
-        int[] x = {marginX, marginX + 90, 200, 290};
-        int[] y = {marginY, marginY + 100, marginY + 180, marginY + 260, marginY + 340, marginY + 420};
-
         
         window.add(Create_Button.Field);
         
@@ -88,7 +78,7 @@ public class Calculator {
         
         BtnC btnC = new BtnC();    // create button C
         btnC.btn.addActionListener(event -> {
-            repaintFont();
+            repaintFont.repaint();
             Create_Button.Field.setText("0");
             opt = ' ';
             val = 0;
@@ -98,7 +88,7 @@ public class Calculator {
         BtnBack btnBack = new BtnBack();    // create button btnBack       
              
         btnBack.btn.addActionListener(event -> {
-            repaintFont();
+            repaintFont.repaint();
             
             String str = inText.Field.getText();
             StringBuilder str2 = new StringBuilder();
@@ -115,7 +105,7 @@ public class Calculator {
         
         BtnMod btnMod = new BtnMod(); // create button BtnMod
         btnMod.btn.addActionListener(event -> {
-            repaintFont();
+            repaintFont.repaint();
             if (Pattern.matches("([-]?\\d+[.]\\d*)|(\\d+)", inText.Field.getText()))
                 if (go) {
                     val = calc.compute(val, inText.Field.getText(), opt);
@@ -134,7 +124,7 @@ public class Calculator {
         BtnDiv btnDiv = new BtnDiv(); // create button BtnDiv
       
         btnDiv.btn.addActionListener(event -> {
-            repaintFont();
+            repaintFont.repaint();
             if (Pattern.matches("([-]?\\d+[.]\\d*)|(\\d+)", inText.Field.getText()))
                 if (go) {
                     val = calc.compute(val, inText.Field.getText(), opt);
@@ -155,7 +145,7 @@ public class Calculator {
        Btn7 btn7 = new Btn7(); // create button Btn7
         
         btn7.btn.addActionListener(event -> {
-            repaintFont();
+            repaintFont.repaint();
             if (addWrite) {
                 if (Pattern.matches("[0]*", inText.Field.getText())) {
                     inText.Field.setText("7");
@@ -173,7 +163,7 @@ public class Calculator {
         Btn8 btn8 = new Btn8();  // create button Btn8
     
         btn8.btn.addActionListener(event -> {
-            repaintFont();
+            repaintFont.repaint();
             if (addWrite) {
                 if (Pattern.matches("[0]*", inText.Field.getText())) {
                     inText.Field.setText("8");
@@ -191,7 +181,7 @@ public class Calculator {
         Btn9 btn9 = new Btn9(); // create button Btn9
         
         btn9.btn.addActionListener(event -> {
-            repaintFont();
+            repaintFont.repaint();
             if (addWrite) {
                 if (Pattern.matches("[0]*", inText.Field.getText())) {
                     inText.Field.setText("9");
@@ -209,7 +199,7 @@ public class Calculator {
         BtnMul btnMul = new BtnMul(); // create button BtnMul
         
         btnMul.btn.addActionListener(event -> {
-            repaintFont();
+            repaintFont.repaint();
             if (Pattern.matches("([-]?\\d+[.]\\d*)|(\\d+)", inText.Field.getText()))
                 if (go) {
                     val = calc.compute(val, inText.Field.getText(), opt);
@@ -230,7 +220,7 @@ public class Calculator {
         Btn4 btn4 = new Btn4(); //  create button Btn4
 
         btn4.btn.addActionListener(event -> {
-            repaintFont();
+            repaintFont.repaint();
             if (addWrite) {
                 if (Pattern.matches("[0]*", inText.Field.getText())) {
                     inText.Field.setText("4");
@@ -248,7 +238,7 @@ public class Calculator {
         Btn5 btn5 = new Btn5(); //  create button Btn5
         
         btn5.btn.addActionListener(event -> {
-            repaintFont();
+            repaintFont.repaint();
             if (addWrite) {
                 if (Pattern.matches("[0]*", inText.Field.getText())) {
                     inText.Field.setText("5");
@@ -266,7 +256,7 @@ public class Calculator {
         Btn6 btn6 = new Btn6();  //  create button Btn6
         
         btn6.btn.addActionListener(event -> {
-            repaintFont();
+            repaintFont.repaint();
             if (addWrite) {
                 if (Pattern.matches("[0]*", inText.Field.getText())) {
                     inText.Field.setText("6");
@@ -284,7 +274,7 @@ public class Calculator {
         BtnSub btnSub = new BtnSub(); // create button BtnSub
        
         btnSub.btn.addActionListener(event -> {
-            repaintFont();
+            repaintFont.repaint();
             if (Pattern.matches("([-]?\\d+[.]\\d*)|(\\d+)", inText.Field.getText()))
                 if (go) {
                     val = calc.compute(val, inText.Field.getText(), opt);
@@ -306,7 +296,7 @@ public class Calculator {
         Btn1 btn1 = new Btn1(); // create button Btn1
        
         btn1.btn.addActionListener(event -> {
-            repaintFont();
+            repaintFont.repaint();
             if (addWrite) {
                 if (Pattern.matches("[0]*", inText.Field.getText())) {
                     inText.Field.setText("1");
@@ -324,7 +314,7 @@ public class Calculator {
         Btn2 btn2 = new Btn2();  // create button Btn2
         
         btn2.btn.addActionListener(event -> {
-            repaintFont();
+            repaintFont.repaint();
             if (addWrite) {
                 if (Pattern.matches("[0]*", inText.Field.getText())) {
                     inText.Field.setText("2");
@@ -342,7 +332,7 @@ public class Calculator {
         Btn3 btn3 = new Btn3(); // create button Btn3
        
         btn3.btn.addActionListener(event -> {
-            repaintFont();
+            repaintFont.repaint();
             if (addWrite) {
                 if (Pattern.matches("[0]*", inText.Field.getText())) {
                     inText.Field.setText("3");
@@ -360,7 +350,7 @@ public class Calculator {
         BtnAdd btnAdd = new BtnAdd(); // create button BtnAdd
         
         btnAdd.btn.addActionListener(event -> { 
-            repaintFont();
+            repaintFont.repaint();
             if (Pattern.matches("([-]?\\d+[.]\\d*)|(\\d+)", inText.Field.getText()))
                 if (go) {
                     val = calc.compute(val, inText.Field.getText(), opt);
@@ -381,7 +371,7 @@ public class Calculator {
         BtnPoint btnPoint = new BtnPoint(); // create button BtnPoint
        
         btnPoint.btn.addActionListener(event -> {
-            repaintFont();
+            repaintFont.repaint();
             if (addWrite) {
                 inText.Field.setText(inText.Field.getText() + ".");
             } else {
@@ -395,7 +385,7 @@ public class Calculator {
         Btn0 btn0 = new Btn0(); // create button Btn0
         
         btn0.btn.addActionListener(event -> {
-            repaintFont();
+            repaintFont.repaint();
             if (addWrite) {
                 if (Pattern.matches("[0]*", inText.Field.getText())) {
                     inText.Field.setText("0");
@@ -434,9 +424,9 @@ public class Calculator {
     }
 
 
-    private void repaintFont() {
+   /* private void repaintFont() {
         inText.Field.setFont(inText.Field.getFont().deriveFont(Font.PLAIN));
-    }
+    }*/
 
     /*private void themeColor() {
 
