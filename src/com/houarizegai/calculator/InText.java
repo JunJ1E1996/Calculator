@@ -14,5 +14,4 @@ public class InText implements Create_Button{
 		Field.setFont(new Font("Comic Sans MS", Font.PLAIN, 33));
 	}
 	
-	
 }

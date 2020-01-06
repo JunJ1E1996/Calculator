@@ -11,7 +11,7 @@ public class Calculator {
 
     private JFrame window; // This is Main Window
     //private JTextField inText;  // Input Text
-    private JButton btn1, btn2, btn3, btnAdd, btnPoint, btn0, btnEqual, choixColor;
+    private JButton btn2, btn3, btnAdd, btnPoint, btn0, btnEqual, choixColor;
     private char opt = ' ';             // Storage Operator
     private boolean go = true,          //  Opt != (=)
             addWrite = true;    
@@ -83,14 +83,14 @@ public class Calculator {
 
         //InText inText = new InText(); // ADD A JTextField
         
-        window.add(inText.Field);
+        window.add(Create_Button.Field);
         
         Calc calc = new Calc();  // THIS WORK TO CALCULATE BEING A CLASS
         
         BtnC btnC = new BtnC();    // create button C
         btnC.btn.addActionListener(event -> {
             repaintFont();
-            inText.Field.setText("0");
+            Create_Button.Field.setText("0");
             opt = ' ';
             val = 0;
         });
@@ -100,6 +100,7 @@ public class Calculator {
              
         btnBack.btn.addActionListener(event -> {
             repaintFont();
+            
             String str = inText.Field.getText();
             StringBuilder str2 = new StringBuilder();
             for (int i = 0; i < (str.length() - 1); i++) {
@@ -303,11 +304,9 @@ public class Calculator {
         });
         window.add(btnSub.btn);
         
-        btn1 = new JButton("1");
-        btn1.setBounds(x[0],y[4],wBtn,hBtn);
-        btn1.setFont(btnFont);
-        btn1.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        btn1.addActionListener(event -> {
+        Btn1 btn1 = new Btn1(); // create button Btn1
+       
+        btn1.btn.addActionListener(event -> {
             repaintFont();
             if (addWrite) {
                 if (Pattern.matches("[0]*", inText.Field.getText())) {
@@ -321,7 +320,7 @@ public class Calculator {
             }
             go = true;
         });
-        window.add(btn1);
+        window.add(btn1.btn);
         
         btn2 = new JButton("2");
         btn2.setBounds(x[1],y[4],wBtn,hBtn);

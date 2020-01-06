@@ -15,4 +15,6 @@ public interface Create_Button {
     int[] y = {marginY, marginY + 100, marginY + 180, marginY + 260, marginY + 340, marginY + 420};
     
     JTextField Field = new JTextField("0");
+    
+    
 }
